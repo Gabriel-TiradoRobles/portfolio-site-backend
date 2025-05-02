@@ -20,7 +20,6 @@ class Languages(models.Model):
         return '%s' % (self.langName)
 
 
-
 class PapersAndPresentations(models.Model):
     title = models.CharField(max_length=100)
     type = models.CharField(max_length=30)
@@ -52,6 +51,7 @@ class Projects(models.Model):
         verbose_name = 'Project'
         verbose_name_plural = 'Projects'
 
+
 class ProjectInfo(models.Model):
     projectID = models.ForeignKey(Projects, related_name='project_info', on_delete=models.CASCADE)
     projDescription = models.TextField()
@@ -60,6 +60,7 @@ class ProjectInfo(models.Model):
     # Headers surround with <h2></h2> Images reference with <fig#> (# == img figure number)
     projUiInfo = models.TextField()
     projAddConsiderations = models.TextField()
+
 
 class ProjectUIImages(models.Model):
     projectInfoID = models.ForeignKey(ProjectInfo, related_name='ui_images', on_delete=models.CASCADE)

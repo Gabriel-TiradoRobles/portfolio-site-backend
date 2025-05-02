@@ -47,6 +47,7 @@ class PaperAndPresentationDetails(generics.RetrieveAPIView):
     serializer_class = PaperAndPresSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
+# Language List View
 class LanguageList(generics.ListAPIView):
     queryset = Languages.objects.all()
     serializer_class = LanguageSerializer
